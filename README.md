@@ -25,7 +25,7 @@ See the `data` folder.
 ### TODO
 - [ ] Release pre-trained checkpoint & inference code.
 - [ ] Release training code.
-- [ ] Release Objaverse-Animation & Objaverse-Animation rendering script.
+- [x] Release Objaverse-Animation & Objaverse-Animation rendering script.
 
 ### Citation
 
