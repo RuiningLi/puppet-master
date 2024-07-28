@@ -19,7 +19,7 @@ rm blender-3.2.2-linux-x64.tar.xz
 ```
 
 ### Exporting Meshes
-The script also allows you to export a sequence of .obj meshes, which can be useful for other applications:
+The script also allows you to export a sequence of vertex-aligned .obj meshes for each animated 3D model, which can be useful for other applications:
 ```
 /path/to/blender-3.2.2-linux-x64/blender -noaudio -b -P blender_render_animation.py -- --object_path /path/to/glb --output_dir /path/to/output/directory --only_northern_hemisphere --engine CYCLES --max_n_frames 32 --export_mesh
 ```
