@@ -1,5 +1,7 @@
 # Objaverse-Animation & Objaverse-Animation-HQ
 
+![Dataset](https://vgg-puppetmaster.github.io/resources/data.png)
+
 ### Filtering
 The `objaverse-animation.json` and `objaverse-animation-HQ.json` provide the IDs of the animated 3D models in Objaverse.
 
