@@ -19,13 +19,13 @@ Official implementation of 'Puppet-Master: Scaling Interactive Video Generation 
 ##### Humans
 ![Humans](https://vgg-puppetmaster.github.io/resources/human.gif)
 
-### Data: Objaverse-Animation & Objaverse-Animation-HQ
+### Objaverse-Animation & Objaverse-Animation-HQ
 See the `data` folder.
 
 ### TODO
-- [] Release pre-trained checkpoint & inference code.
-- [] Release training code.
-- [] Release Objaverse-Animation & Objaverse-Animation rendering script.
+- [ ] Release pre-trained checkpoint & inference code.
+- [ ] Release training code.
+- [ ] Release Objaverse-Animation & Objaverse-Animation rendering script.
 
 ### Citation
 
