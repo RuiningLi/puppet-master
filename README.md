@@ -2,7 +2,7 @@
 Official implementation of 'Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics'
 
 <p align="center">
-  [<a href="#"><strong>arXiv</strong></a>]
+  [<a href="https://arxiv.org/pdf/2408.04631"><strong>arXiv</strong></a>]
   <!-- [<a href="https://huggingface.co/spaces/rayli/DragAPart"><strong>Demo</strong></a>] -->
   [<a href="https://vgg-puppetmaster.github.io/"><strong>Project</strong></a>]
   [<a href="#citation"><strong>BibTeX</strong></a>]
@@ -33,7 +33,7 @@ See the `data` folder.
 @article{li2024puppetmaster,
   title     = {Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics},
   author    = {Li, Ruining and Zheng, Chuanxia and Rupprecht, Christian and Vedaldi, Andrea},
-  journal   = {arXiv preprint},
+  journal   = {arXiv preprint arXiv:2408.04631},
   year      = {2024}
 }
 ```
