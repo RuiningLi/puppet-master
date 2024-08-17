@@ -8,6 +8,9 @@ Official implementation of 'Puppet-Master: Scaling Interactive Video Generation 
   [<a href="#citation"><strong>BibTeX</strong></a>]
 </p>
 
+### News
+- Pre-trained checkpoints and demo released on Hugging Face. Check [here](https://huggingface.co/spaces/rayli/Puppet-Master) for demo and [here](https://huggingface.co/spaces/rayli/Puppet-Master/tree/main) for code.
+
 ### Examples
 
 ##### Man-Made Objects
@@ -23,7 +26,7 @@ Official implementation of 'Puppet-Master: Scaling Interactive Video Generation 
 See the `data` folder.
 
 ### TODO
-- [ ] Release pre-trained checkpoint & inference code.
+- [x] Release pre-trained checkpoint & inference code.
 - [ ] Release training code.
 - [x] Release Objaverse-Animation & Objaverse-Animation rendering script.
 
