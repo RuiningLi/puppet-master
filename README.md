@@ -9,7 +9,7 @@ Official implementation of 'Puppet-Master: Scaling Interactive Video Generation 
 </p>
 
 ### News
-- Pre-trained checkpoints and demo released on Hugging Face. Check [here](https://huggingface.co/spaces/rayli/Puppet-Master) for demo and [here](https://huggingface.co/spaces/rayli/Puppet-Master/tree/main) for code.
+- **24-Aug-17** Pre-trained checkpoints and demo released on Hugging Face. Check [here](https://huggingface.co/spaces/rayli/Puppet-Master) for demo and [here](https://huggingface.co/spaces/rayli/Puppet-Master/tree/main) for code.
 
 ### Examples
 
