@@ -25,3 +25,16 @@ The script also allows you to export a sequence of vertex-aligned .obj meshes fo
 ```
 /path/to/blender-3.2.2-linux-x64/blender -noaudio -b -P blender_render_animation.py -- --object_path /path/to/glb --output_dir /path/to/output/directory --only_northern_hemisphere --engine CYCLES --max_n_frames 32 --export_mesh
 ```
+
+### Sampling drags
+0. Before proceeding, make sure you have the animations rendered and mesh exported. We use the mesh to sample 3D trajectories and use the camera matrices saved from rendering to project the trajectories to the image space.
+
+1. Use the following command
+```
+python sample_drags.py --render_root /path/to/the/render/root --save_dir /path/to/the/dir/to/save/the/results --num_renders 12 --render_part_mask --sample_drags --num_samples 20 --visualize
+```
+
+Notes:
+- The `--render_root` is the `output_dir` specified in blender rendering.
+- The `--num_renders` value should be consistent with the one used in blender rendering.
+- `--visualize` flag should be disabled for efficiency concern.
