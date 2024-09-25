@@ -138,7 +138,6 @@ class DirectionalLight(torch.nn.Module):
     def shade(self, gb_pos, gb_normal, ka, kd, ks, view_pos, specular=True, alpha=1):
         wo = util.safe_normalize(view_pos - gb_pos)
         reflvec = util.safe_normalize(util.reflect(wo, gb_normal))
-        # import pdb; pdb.set_trace()
         normalizing_factor = torch.max(kd + ka)
         kd = kd / normalizing_factor
         ka = ka / normalizing_factor

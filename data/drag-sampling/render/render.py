@@ -40,7 +40,6 @@ def shade(
     # Texture lookups
     ################################################################################
     perturbed_nrm = None
-    # import pdb; pdb.set_trace()
     if 'kd_ks_normal' in material:
         # Combined texture, used for MLPs because lookups are expensive
         all_tex_jitter = material['kd_ks_normal'].sample(gb_pos + torch.normal(mean=0, std=0.01, size=gb_pos.shape, device="cuda"))

@@ -146,15 +146,3 @@ class DragVideoDataset(Dataset):
             embedding=embedding.to(dtype=torch.float32),
             drags=drags.to(dtype=torch.float32),
         )
-
-
-if __name__ == "__main__":
-    dataset = DragVideoDataset(
-        latent_dist_roots=sorted(glob("/scratch/shared/beegfs/jingbo/precomputed_latents_clean/*/*")),
-        embedding_roots=sorted(glob("/scratch/shared/beegfs/jingbo/data/precomputed_embeddings/*/*")),
-        drag_roots=sorted(glob("/scratch/shared/beegfs/ruining/data/DragYourWay/drag_samples_v2/*/*")),
-    )
-    print(len(dataset))
-    sample = dataset[0]
-    import pdb; pdb.set_trace()
-    print("Done")

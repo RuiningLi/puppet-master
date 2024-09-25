@@ -33,7 +33,6 @@ def load_obj(filename, clear_ks=True, mtl_override=None, device="cuda", randomiz
     print("Loading mesh: ", filename)
     obj_path = os.path.dirname(filename)
 
-    # import pdb; pdb.set_trace()
     # Read entire file
     with open(filename, 'r') as f:
         lines = f.readlines()
@@ -57,7 +56,6 @@ def load_obj(filename, clear_ks=True, mtl_override=None, device="cuda", randomiz
     else:
         all_materials += material.load_mtl(mtl_override)
 
-    # import pdb; pdb.set_trace()
     # load vertices
     vertices, texcoords, normals  = [], [], []
     texture_idx_offset = [0]

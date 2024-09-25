@@ -27,9 +27,9 @@ model_args:
   drag_embedder_out_channels: [256, 320, 320]
 
 dataset_args:
-  latent_dist_roots: /scratch/shared/beegfs/jingbo/precomputed_latents_clean/*/*
-  embedding_roots: /scratch/shared/beegfs/jingbo/data/precomputed_embeddings/*/*
-  drag_roots: /scratch/shared/beegfs/ruining/data/DragYourWay/drag_samples_v2/*/*
+  latent_dist_roots: /pattern/of/all/precomputed/latents/files/at/the/object/level/*/*
+  embedding_roots: /pattern/of/all/precomputed/embedding/files/at/the/object/level/*/*
+  drag_roots: /pattern/of/all/precomputed/drag/samples/at/the/object/level/*/*
   num_max_drags: 5
 
 non_first_frame_weight: 1

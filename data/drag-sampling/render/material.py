@@ -71,7 +71,6 @@ def load_mtl(fn, clear_ks=True, device="cuda"):
                 material[prefix] = torch.tensor(tuple(float(d) for d in data), dtype=torch.float32, device=device)
 
     # Convert everything to textures. Our code expects 'kd' and 'ks' to be texture maps. So replace constants with 1x1 maps
-    # import pdb; pdb.set_trace()
     for mat in materials:
         if not 'bsdf' in mat:
             mat['bsdf'] = 'pbr'
@@ -135,8 +134,6 @@ def save_mtl(fn, material):
 def _upscale_replicate(x, full_res, tex=""):
     x = x.permute(0, 3, 1, 2)
     x = torch.nn.functional.pad(x, (0, full_res[1] - x.shape[3], 0, full_res[0] - x.shape[2]), 'replicate')
-    from torchvision.utils import save_image
-    save_image(x, f'/work/ruining/tmp/test_{tex}.png')
     ret = x.permute(0, 2, 3, 1).contiguous()
     return ret
 
@@ -174,9 +171,6 @@ def merge_materials(materials, texcoords, tfaces, mfaces):
             tex_data = torch.cat(tuple(util.scale_img_nhwc(mat[tex].data, tuple(max_res)) for mat in materials), dim=2) # Lay out all textures horizontally, NHWC so dim2 is x
             tex_data = _upscale_replicate(tex_data, full_res, tex)
             uber_material[tex] = texture.Texture2D(tex_data)
-
-
-    # import pdb; pdb.set_trace()
 
     # Compute scaling values for used / unused texture area
     s_coeff = [full_res[0] / max_res[0], full_res[1] / max_res[1]]
