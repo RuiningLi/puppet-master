@@ -1,0 +1,39 @@
+pretrained_model_name_or_local_dir: stabilityai/stable-video-diffusion-img2vid
+
+results_dir: ./runs
+num_max_drags: 5
+test_dir: ./DragAMove-test-batches
+
+random_seed: 1024
+num_steps: 1500000
+global_batch_size: 1
+num_workers: 2
+log_every: 50
+visualize_every: 200
+ckpt_every: 50000
+vae: "ema"
+learning_rate: 1.e-5
+
+log_sigma_std: 1.6
+log_sigma_mean: 0.7
+
+zero_init: true
+
+model_args:
+  cond_dropout_prob: 0.1
+  drag_token_cross_attn: true
+  use_modulate: true
+  pos_embed_dim: 64
+  drag_embedder_out_channels: [256, 320, 320]
+
+dataset_args:
+  latent_dist_roots: /scratch/shared/beegfs/jingbo/precomputed_latents_clean/*/*
+  embedding_roots: /scratch/shared/beegfs/jingbo/data/precomputed_embeddings/*/*
+  drag_roots: /scratch/shared/beegfs/ruining/data/DragYourWay/drag_samples_v2/*/*
+  num_max_drags: 5
+
+non_first_frame_weight: 1
+weight_increasing: true
+enable_gradient_checkpointing: true
+gradient_accumulation_steps: 64
+max_grad_norm: 1

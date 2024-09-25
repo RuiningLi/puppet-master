@@ -12,6 +12,7 @@ from torch.utils.data import Dataset
 
 REDUCE_DUPLICATE_DRAGS = True
 
+
 class DragVideoDataset(Dataset):
     """
     An example dataset to load the drag samples together with the rendered animations. 
@@ -42,6 +43,9 @@ class DragVideoDataset(Dataset):
         self.latent_dist_roots = latent_dist_roots
         self.embedding_roots = embedding_roots
         self.drag_roots = drag_roots
+        assert len(latent_dist_roots) == len(embedding_roots) == len(drag_roots), \
+            "The length of latent_dist_roots, embedding_roots, and drag_roots must be the same. Got {} {} {}".format(
+                len(latent_dist_roots), len(embedding_roots), len(drag_roots))
 
         self.num_max_drags = num_max_drags
         self.num_drag_samples = num_drag_samples
@@ -50,6 +54,7 @@ class DragVideoDataset(Dataset):
 
         self.sample_size = sample_size
 
+        self.obj_action_tuples = []
         for obj_idx, obj_drag_root in enumerate(drag_roots):
             for action in os.listdir(obj_drag_root):
                 self.obj_action_tuples.append((obj_idx, action))
@@ -141,3 +146,15 @@ class DragVideoDataset(Dataset):
             embedding=embedding.to(dtype=torch.float32),
             drags=drags.to(dtype=torch.float32),
         )
+
+
+if __name__ == "__main__":
+    dataset = DragVideoDataset(
+        latent_dist_roots=sorted(glob("/scratch/shared/beegfs/jingbo/precomputed_latents_clean/*/*")),
+        embedding_roots=sorted(glob("/scratch/shared/beegfs/jingbo/data/precomputed_embeddings/*/*")),
+        drag_roots=sorted(glob("/scratch/shared/beegfs/ruining/data/DragYourWay/drag_samples_v2/*/*")),
+    )
+    print(len(dataset))
+    sample = dataset[0]
+    import pdb; pdb.set_trace()
+    print("Done")
