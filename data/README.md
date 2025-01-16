@@ -38,3 +38,7 @@ Notes:
 - The `--render_root` is the `output_dir` specified in blender rendering.
 - The `--num_renders` value should be consistent with the one used in blender rendering.
 - `--visualize` flag should be disabled for efficiency concern.
+
+### Pre-Computing Image Embeddings & VAE Latents
+
+Please refer to the scripts under `svd-cache` folder.
